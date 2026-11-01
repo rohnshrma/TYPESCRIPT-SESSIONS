@@ -36,7 +36,7 @@ in the `class/` folder.
 
 ### Not allowed
 
-Do not use anything outside the table above. For example: `any`, `as` type
+Do not use anything outside the table above. For example: `instanceof`, `protected`, `any`, `as` type
 assertions with `!` or `as unknown as`, `@ts-ignore`, `@ts-expect-error`,
 `Record`, mapped types, conditional types, `keyof`, `typeof` as a type operator,
 decorators, namespaces, `declare module`, and validation libraries such as Zod.
@@ -161,8 +161,7 @@ Rename every file in `server/src` to `.ts` and fix all the errors.
    - `req.query.status` is not guaranteed to be a valid status. **Narrow it** with
      `typeof` and a check against the allowed values before building the filter.
 5. **`errorHandler`:** type all four parameters (`Request`, `Response`, `NextFunction`,
-   and the error as `unknown`). Use **narrowing** (`instanceof AppError`, `typeof`,
-   `in`) to work out the status code and message. Return type `void`.
+   and the error as `unknown`). Use **narrowing** (`typeof` and `in`) to work out the status code and message. Return type `void`.
 6. **`connectDB`:** give it a `string` parameter. In `index.ts`, handle the
    `MONGO_URI` that may be `undefined` by calling a helper that returns `never`
    when the variable is missing (like `throwError` in `function.ts`).
@@ -176,7 +175,7 @@ Rename every file in `client/src` to `.ts` / `.tsx` and fix all the errors.
    - Type every function's parameters and return type.
    - `STATUSES` is an array of `TodoStatus`. `PRIORITY_LABELS` is a `string[]`.
    - `formatDate(date, withTime)` accepts `string | Date`. Keep the default parameter.
-   - `getErrorMessage(error)` takes `unknown` and returns `string`, using `typeof` / `instanceof` narrowing.
+   - `getErrorMessage(error)` takes `unknown` and returns `string`, using `typeof` / `in` narrowing.
    - `fail(message)` returns `never`.
 2. **`todoApi.ts`:**
    - Type the class property with `private baseUrl: string` in the constructor.
@@ -204,7 +203,7 @@ Rename every file in `client/src` to `.ts` / `.tsx` and fix all the errors.
 ## Part 4: Stretch goal (optional, about 5 bonus marks)
 
 Using only the allowed topics, create an `abstract class BaseService` with an
-`abstract` method and a `protected`/`private` helper, then make `TodoService`
+`abstract` method and a `private` helper, then make `TodoService`
 extend it (see `Shape` and `Rectangle` in `classes.ts`).
 
 ---

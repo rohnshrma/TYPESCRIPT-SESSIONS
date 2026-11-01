@@ -4,6 +4,10 @@ A full-stack Todo app (MongoDB, Express, React, Node) with complete CRUD.
 It is written in **plain JavaScript on purpose**. Your job is to convert it to
 TypeScript. See [ASSIGNMENT.md](./ASSIGNMENT.md).
 
+> **Teacher note:** `solution/` holds the finished TypeScript version of this app
+> (same layout: `solution/server` and `solution/client`). Remove that folder
+> before sharing this repo with students.
+
 ## Structure
 
 ```

@@ -116,7 +116,7 @@ Create `client/tsconfig.json`:
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["src", "vite.config.js"]
+  "include": ["src"]
 }
 ```
 

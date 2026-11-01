@@ -1,0 +1,33 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #f4f5f7; color: #1f2430; }
+.container { max-width: 720px; margin: 0 auto; padding: 24px 16px; }
+h1 { text-align: center; }
+
+.stats { display: flex; gap: 8px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
+.badge { padding: 2px 10px; border-radius: 999px; font-size: 12px; background: #e3e6ec; }
+.badge.pending { background: #fff1c2; }
+.badge.in-progress { background: #cfe4ff; }
+.badge.completed { background: #cdf2d6; }
+
+.error { background: #fde2e2; color: #a12626; padding: 8px 12px; border-radius: 6px; }
+
+.todo-form { background: #fff; padding: 16px; border-radius: 10px; display: grid; gap: 10px; }
+.todo-form input, .todo-form textarea, .todo-form select, .filter select {
+  padding: 8px; border: 1px solid #ccd1da; border-radius: 6px; font: inherit;
+}
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.row > * { flex: 1; }
+
+button { padding: 8px 14px; border: 0; border-radius: 6px; background: #3b5bdb; color: #fff; cursor: pointer; font: inherit; }
+button.secondary { background: #6b7280; }
+button.danger { background: #d64545; }
+
+.filter { margin: 16px 0 8px; }
+.todo-list { list-style: none; padding: 0; display: grid; gap: 10px; }
+.todo-item { display: flex; gap: 12px; align-items: flex-start; background: #fff; padding: 12px 16px; border-radius: 10px; }
+.todo-item.done h3 { text-decoration: line-through; color: #8a909c; }
+.todo-item .content { flex: 1; }
+.todo-item h3 { margin: 0 0 4px; }
+.todo-item p { margin: 0 0 6px; color: #4b5260; }
+.actions { display: flex; gap: 6px; }
+.empty { text-align: center; color: #8a909c; }
